@@ -26,10 +26,9 @@ WORKDIR /app
 
 # Copiar solo lo necesario para producción
 COPY --from=builder /app/.output /app/.output
-COPY --from=builder /app/package.json /app/package.json
 
-# Instalar solo dependencias de producción
-RUN npm ci --omit=dev
+# No necesitamos instalar dependencias porque .output ya tiene todo lo necesario
+# El build de Nuxt genera un servidor standalone en .output
 
 # Exponer puerto 3000 (puerto por defecto de Nuxt)
 EXPOSE 3000
