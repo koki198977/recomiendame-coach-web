@@ -1,48 +1,54 @@
-import { defineEventHandler, readBody, createError } from 'h3'
+import { defineEventHandler, readBody, createError } from "h3";
 
 export default defineEventHandler(async (event) => {
-  console.log('=== Recibiendo solicitud de contacto ===')
-  
+  console.log("=== Recibiendo solicitud de contacto ===");
+
   try {
-    const body = await readBody(event)
-    console.log('Datos recibidos:', { 
-      firstName: body.firstName, 
-      lastName: body.lastName, 
-      email: body.email, 
-      subject: body.subject 
-    })
-    
+    const body = await readBody(event);
+    console.log("Datos recibidos:", {
+      firstName: body.firstName,
+      lastName: body.lastName,
+      email: body.email,
+      subject: body.subject,
+    });
+
     // Validar campos requeridos
-    if (!body.firstName || !body.lastName || !body.email || !body.subject || !body.message) {
+    if (
+      !body.firstName ||
+      !body.lastName ||
+      !body.email ||
+      !body.subject ||
+      !body.message
+    ) {
       throw createError({
         statusCode: 400,
-        statusMessage: 'Todos los campos son requeridos'
-      })
+        statusMessage: "Todos los campos son requeridos",
+      });
     }
 
     // Validar email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(body.email)) {
       throw createError({
         statusCode: 400,
-        statusMessage: 'Email inválido'
-      })
+        statusMessage: "Email inválido",
+      });
     }
 
     // Mapear el subject a texto legible
     const subjectMap: Record<string, string> = {
-      support: 'Soporte técnico',
-      feedback: 'Comentarios y sugerencias',
-      business: 'Consultas comerciales',
-      privacy: 'Privacidad y datos',
-      other: 'Otro'
-    }
+      support: "Soporte técnico",
+      feedback: "Comentarios y sugerencias",
+      business: "Consultas comerciales",
+      privacy: "Privacidad y datos",
+      other: "Otro",
+    };
 
-    const subjectText = subjectMap[body.subject] || body.subject
+    const subjectText = subjectMap[body.subject] || body.subject;
 
     // Preparar el email para enviar al backend
     const emailData = {
-      to: 'coach-contacto@recomiendameapp.cl',
+      to: "coach-contacto@recomiendameapp.cl",
       from: body.email,
       replyTo: body.email,
       subject: `[${subjectText}] Contacto Web - ${body.firstName} ${body.lastName}`,
@@ -74,7 +80,9 @@ export default defineEventHandler(async (event) => {
               
               <div class="field">
                 <div class="label">📧 Email:</div>
-                <div class="value"><a href="mailto:${body.email}">${body.email}</a></div>
+                <div class="value"><a href="mailto:${body.email}">${
+        body.email
+      }</a></div>
               </div>
               
               <div class="field">
@@ -84,12 +92,14 @@ export default defineEventHandler(async (event) => {
               
               <div class="field">
                 <div class="label">💬 Mensaje:</div>
-                <div class="value">${body.message.replace(/\n/g, '<br>')}</div>
+                <div class="value">${body.message.replace(/\n/g, "<br>")}</div>
               </div>
               
               <div class="footer">
                 <p>Este mensaje fue enviado desde el formulario de contacto de recomiendameapp.cl</p>
-                <p>Fecha: ${new Date().toLocaleString('es-CL', { timeZone: 'America/Santiago' })}</p>
+                <p>Fecha: ${new Date().toLocaleString("es-CL", {
+                  timeZone: "America/Santiago",
+                })}</p>
               </div>
             </div>
           </div>
@@ -108,65 +118,70 @@ ${body.message}
 
 ---
 Este mensaje fue enviado desde el formulario de contacto de recomiendameapp.cl
-Fecha: ${new Date().toLocaleString('es-CL', { timeZone: 'America/Santiago' })}
-      `
-    }
+Fecha: ${new Date().toLocaleString("es-CL", { timeZone: "America/Santiago" })}
+      `,
+    };
 
     // Intentar enviar al backend de Recomiéndame
     try {
-      const response = await $fetch('https://api-coach.recomiendameapp.cl/contact/send-email', {
-        method: 'POST',
+      // Determinar la URL del backend
+      // Si estamos en Docker, usar la variable de entorno; si no, usar el dominio
+      const backendUrl = process.env.BACKEND_URL || 'https://api-coach.recomiendameapp.cl'
+      const contactEndpoint = `${backendUrl}/contact/send-email`
+      console.log('🔗 Intentando enviar a:', contactEndpoint)
+      const response = await $fetch(contactEndpoint, {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: emailData,
-        timeout: 10000 // 10 segundos timeout
-      })
+        timeout: 10000, // 10 segundos timeout
+      });
 
-      console.log('Email enviado exitosamente:', response)
-      
+      console.log("✅ Email enviado exitosamente:", response);
+
       return {
         success: true,
-        message: 'Mensaje enviado exitosamente'
-      }
+        message: "Mensaje enviado exitosamente",
+      };
     } catch (apiError: any) {
-      console.error('Error al enviar al backend:', apiError)
-      console.error('Detalles del error:', {
+      console.error("Error al enviar al backend:", apiError);
+      console.error("Detalles del error:", {
         status: apiError.status,
         statusText: apiError.statusText,
-        data: apiError.data
-      })
-      
+        data: apiError.data,
+      });
+
       // Como último recurso, guardar el mensaje en logs del servidor
-      console.log('=== MENSAJE DE CONTACTO (FALLBACK) ===')
-      console.log('Fecha:', new Date().toISOString())
-      console.log('Nombre:', body.firstName, body.lastName)
-      console.log('Email:', body.email)
-      console.log('Asunto:', subjectText)
-      console.log('Mensaje:', body.message)
-      console.log('=====================================')
-      
+      console.log("=== MENSAJE DE CONTACTO (FALLBACK) ===");
+      console.log("Fecha:", new Date().toISOString());
+      console.log("Nombre:", body.firstName, body.lastName);
+      console.log("Email:", body.email);
+      console.log("Asunto:", subjectText);
+      console.log("Mensaje:", body.message);
+      console.log("=====================================");
+
       // Retornar éxito de todas formas para no frustrar al usuario
       // El mensaje quedó registrado en los logs del servidor
       return {
         success: true,
-        message: 'Mensaje recibido. Te contactaremos pronto.',
-        fallback: true
-      }
+        message: "Mensaje recibido. Te contactaremos pronto.",
+        fallback: true,
+      };
     }
-
   } catch (error: any) {
-    console.error('Error general al procesar contacto:', error)
-    
+    console.error("Error general al procesar contacto:", error);
+
     // Si es un error de validación, retornarlo
     if (error.statusCode === 400) {
-      throw error
+      throw error;
     }
-    
+
     // Error genérico
     throw createError({
       statusCode: 500,
-      statusMessage: 'Error al procesar el mensaje. Por favor escríbenos directamente a coach-contacto@recomiendameapp.cl'
-    })
+      statusMessage:
+        "Error al procesar el mensaje. Por favor escríbenos directamente a coach-contacto@recomiendameapp.cl",
+    });
   }
-})
+});

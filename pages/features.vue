@@ -51,11 +51,13 @@
             </ul>
           </div>
           <div>
-            <img 
-              src="/assets/chapi-3d-promocionando.png" 
-              alt="Chapi dándote la bienvenida"
-              class="w-full h-auto drop-shadow-2xl"
-            />
+            <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-6">
+              <img 
+                src="/assets/chapi-3d-promocionando.png" 
+                alt="Chapi dándote la bienvenida"
+                class="w-full h-auto drop-shadow-2xl rounded-2xl"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -66,11 +68,13 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div class="order-2 lg:order-1">
-            <img 
-              src="/screen1.jpeg" 
-              alt="Pantalla Home"
-              class="w-full h-auto rounded-3xl shadow-strong"
-            />
+            <div class="bg-white rounded-3xl p-3 shadow-strong">
+              <img 
+                src="/screen1.jpeg" 
+                alt="Pantalla Home"
+                class="w-full h-auto rounded-2xl"
+              />
+            </div>
           </div>
           <div class="order-1 lg:order-2">
             <span class="text-secondary-500 font-semibold text-sm uppercase tracking-wide">Dashboard</span>
@@ -172,11 +176,13 @@
         </div>
 
         <div class="text-center">
-          <img 
-            src="/assets/chapi-3d-compras.png" 
-            alt="Chapi con lista de compras"
-            class="w-64 h-auto mx-auto drop-shadow-2xl"
-          />
+          <div class="inline-block bg-white/10 backdrop-blur-sm rounded-3xl p-6">
+            <img 
+              src="/assets/chapi-3d-compras.png" 
+              alt="Chapi con lista de compras"
+              class="w-64 h-auto mx-auto drop-shadow-2xl rounded-2xl"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -236,11 +242,13 @@
             </ul>
           </div>
           <div>
-            <img 
-              src="/assets/chapi-3d-ejercicio-3.png" 
-              alt="Chapi ejercitándose"
-              class="w-full h-auto drop-shadow-2xl"
-            />
+            <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-6">
+              <img 
+                src="/assets/chapi-3d-ejercicio-3.png" 
+                alt="Chapi ejercitándose"
+                class="w-full h-auto drop-shadow-2xl rounded-2xl"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -314,11 +322,13 @@
         </div>
 
         <div class="text-center">
-          <img 
-            src="/assets/chapi-3d-post.png" 
-            alt="Chapi en redes sociales"
-            class="w-64 h-auto mx-auto drop-shadow-2xl"
-          />
+          <div class="inline-block bg-white/10 backdrop-blur-sm rounded-3xl p-6">
+            <img 
+              src="/assets/chapi-3d-post.png" 
+              alt="Chapi en redes sociales"
+              class="w-64 h-auto mx-auto drop-shadow-2xl rounded-2xl"
+            />
+          </div>
         </div>
       </div>
     </section>

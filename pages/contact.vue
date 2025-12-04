@@ -14,11 +14,13 @@
             </p>
           </div>
           <div>
-            <img 
-              src="/assets/chapi-3d-promocionando.png" 
-              alt="Chapi listo para ayudarte"
-              class="w-full h-auto drop-shadow-2xl animate-float max-w-md mx-auto"
-            />
+            <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-6 max-w-md mx-auto">
+              <img 
+                src="/assets/chapi-3d-promocionando.png" 
+                alt="Chapi listo para ayudarte"
+                class="w-full h-auto drop-shadow-2xl animate-float rounded-2xl"
+              />
+            </div>
           </div>
         </div>
       </div>

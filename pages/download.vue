@@ -42,11 +42,13 @@
           </div>
 
           <div>
-            <img 
-              src="/assets/chapi-3d-promocionando.png" 
-              alt="Chapi te invita a descargar"
-              class="w-full h-auto drop-shadow-2xl animate-float"
-            />
+            <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-6">
+              <img 
+                src="/assets/chapi-3d-promocionando.png" 
+                alt="Chapi te invita a descargar"
+                class="w-full h-auto drop-shadow-2xl animate-float rounded-2xl"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -72,7 +74,7 @@
               <img 
                 src="/assets/chapi-3d-compras.png" 
                 alt="Plan Nutricional"
-                class="w-full h-64 object-contain"
+                class="w-full h-64 object-contain rounded-2xl"
               />
             </div>
             <h3 class="text-lg font-semibold text-gray-900">Plan Nutricional IA</h3>
@@ -84,7 +86,7 @@
               <img 
                 src="/assets/chapi-3d-ejercicio-3.png" 
                 alt="Rutinas de Ejercicio"
-                class="w-full h-64 object-contain"
+                class="w-full h-64 object-contain rounded-2xl"
               />
             </div>
             <h3 class="text-lg font-semibold text-gray-900">Rutinas de Ejercicio</h3>
@@ -96,7 +98,7 @@
               <img 
                 src="/assets/chapi-3d-post.png" 
                 alt="Red Social"
-                class="w-full h-64 object-contain"
+                class="w-full h-64 object-contain rounded-2xl"
               />
             </div>
             <h3 class="text-lg font-semibold text-gray-900">Red Social</h3>
@@ -108,7 +110,7 @@
               <img 
                 src="/assets/chapi-3d-foto-alimento.png" 
                 alt="Tracking de Progreso"
-                class="w-full h-64 object-contain"
+                class="w-full h-64 object-contain rounded-2xl"
               />
             </div>
             <h3 class="text-lg font-semibold text-gray-900">Tracking Completo</h3>

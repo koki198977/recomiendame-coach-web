@@ -66,11 +66,11 @@
 
           <!-- Chapi Hero Image -->
           <div class="relative z-10">
-            <div class="relative max-w-md mx-auto">
+            <div class="relative max-w-md mx-auto bg-white/10 backdrop-blur-sm rounded-3xl p-6">
               <img 
                 src="/assets/chapi-3d-promocionando.png" 
                 alt="Chapi - Tu coach personal"
-                class="w-full h-auto drop-shadow-2xl animate-float"
+                class="w-full h-auto drop-shadow-2xl animate-float rounded-2xl"
               />
             </div>
           </div>
@@ -628,11 +628,13 @@
     <section class="py-20 bg-white">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="bg-gradient-to-br from-primary-500 to-secondary-500 rounded-3xl p-12 shadow-strong text-white">
-          <img 
-            src="/assets/chapi-3d-promocionando.png" 
-            alt="Chapi te invita"
-            class="w-48 h-auto mx-auto mb-8 drop-shadow-2xl"
-          />
+          <div class="inline-block bg-white/10 backdrop-blur-sm rounded-3xl p-6 mb-8">
+            <img 
+              src="/assets/chapi-3d-promocionando.png" 
+              alt="Chapi te invita"
+              class="w-48 h-auto mx-auto drop-shadow-2xl rounded-2xl"
+            />
+          </div>
           <h2 class="text-3xl lg:text-5xl font-bold mb-6">
             ¿Listo para transformar tu vida?
           </h2>
