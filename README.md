@@ -1,15 +1,15 @@
-# Recomiéndame Coach - Sitio Web
+# Recomiéndame Coach - Sitio Web 🎯
 
-Sitio web oficial de Recomiéndame Coach, tu coach nutricional con inteligencia artificial.
+Sitio web oficial de Recomiéndame Coach, tu coach nutricional y fitness con inteligencia artificial. App móvil completa con planes personalizados, rutinas de ejercicio, red social y Chapi, tu compañero 3D.
 
 ## 🚀 Características
 
-- **Diseño Responsivo**: Optimizado para todos los dispositivos
-- **Colores Consistentes**: Mantiene la identidad visual de la app móvil
-- **Páginas Completas**: Inicio, descarga, términos, contacto y más
-- **Formularios Funcionales**: Reset password, verificación de email, eliminación de cuenta
-- **SEO Optimizado**: Meta tags y estructura semántica
-- **Rendimiento**: Construido con Nuxt.js y Tailwind CSS
+- **Diseño Moderno**: Interfaz actualizada con gradientes y animaciones
+- **Chapi Integrado**: Mascota 3D presente en toda la web
+- **Páginas Completas**: Inicio, funcionalidades detalladas, descarga y más
+- **Responsive**: Optimizado para todos los dispositivos
+- **SEO Optimizado**: Meta tags completos y estructura semántica
+- **Rendimiento**: Construido con Nuxt.js 3 y Tailwind CSS
 
 ## 🎨 Paleta de Colores
 
@@ -27,15 +27,39 @@ Sitio web oficial de Recomiéndame Coach, tu coach nutricional con inteligencia 
 ## 📱 Páginas Incluidas
 
 ### Páginas Principales
-- **`/`** - Página de inicio con hero, características y CTA
-- **`/download`** - Descarga de la app con enlaces a stores
-- **`/contact`** - Formulario de contacto y información
+- **`/`** - Página de inicio renovada con:
+  - Hero section con Chapi promocionando
+  - 6 funcionalidades principales (Nutrición, Ejercicios, Social, Progreso, Logros, Chapi)
+  - Proceso en 3 pasos
+  - Showcase de Chapi en diferentes contextos
+  - Galería de screenshots
+  - Sección de beneficios
+  - Estadísticas de comunidad
+  - CTA final con Chapi
+
+- **`/features`** - Página detallada de funcionalidades con:
+  - Onboarding & Perfil
+  - Home Dashboard
+  - Mi Programa (Plan Nutricional IA)
+  - Ejercicios (Rutinas Personalizadas)
+  - Red Social (Motivación Comunitaria)
+  - Progreso (Tracking Completo)
+  - Sistema de Logros con trofeos
+
+- **`/download`** - Descarga mejorada con:
+  - Hero con Chapi
+  - Preview de funcionalidades con imágenes de Chapi
+  - Requisitos del sistema
+  - FAQ
+  - Enlaces a App Store y Google Play
 
 ### Páginas de Soporte
 - **`/terms`** - Términos y condiciones completos
+- **`/privacy`** - Política de privacidad
 - **`/reset-password`** - Formulario para restablecer contraseña
 - **`/verify-email`** - Verificación de correo electrónico
 - **`/delete-account`** - Proceso de eliminación de cuenta
+- **`/request-delete-account`** - Solicitud de eliminación
 
 ## 🛠 Tecnologías
 
@@ -82,25 +106,64 @@ recomiendame-web/
 └── package.json             # Dependencias del proyecto
 ```
 
-## 🎯 Funcionalidades Implementadas
+## 🎯 Funcionalidades de la App Destacadas en la Web
 
-### Formularios Interactivos
-- ✅ Formulario de contacto con validación
-- ✅ Reset de contraseña con estados de carga
-- ✅ Verificación de email con polling
-- ✅ Eliminación de cuenta con confirmaciones
+### 1. Onboarding & Perfil
+- Registro/Login con email y contraseña
+- Perfil completo: edad, peso, altura, género, nivel de actividad, objetivos
+- Edición flexible de información
 
-### Componentes Reutilizables
+### 2. Home (Dashboard)
+- Resumen diario: calorías, macros, comidas registradas
+- Checkin diario: peso, adherencia, nivel de hambre, notas
+- Chapi bubble: asistente flotante con tips
+
+### 3. Mi Programa (Plan Nutricional)
+- Generación con IA basada en perfil y preferencias
+- 7 días completos: desayuno, almuerzo, cena, snacks
+- Detalles: calorías, macros, ingredientes, instrucciones
+- Cambiar comidas individuales o regenerar días
+- Lista de compras semanal automática
+- Registro manual: buscar, escanear, fotografiar alimentos
+
+### 4. Ejercicios (Workout Plan)
+- Generación personalizada (1-7 días/semana)
+- Escaneo de equipamiento con fotos
+- Objetivos: pérdida de peso, ganancia muscular, mantenimiento
+- Videos de YouTube integrados
+- Tracking: series, repeticiones, peso
+
+### 5. Social (Red Social)
+- Feed: "Todos" y "Siguiendo"
+- Crear posts: texto (500 chars) + imagen
+- Interacciones: likes, comentarios anidados
+- Buscar usuarios, seguir/dejar de seguir
+- Notificaciones de interacciones
+
+### 6. Progreso (Progress Tracking)
+- Gráficas: peso, adherencia, nivel de hambre (30 días)
+- Checkins históricos con notas
+- Comparación de fotos antes/después
+
+### 7. Sistema de Logros 🏆
+- Trofeos por consistencia (7, 30 días)
+- Logros de comidas (primera, 50 comidas)
+- Logros sociales (posts, likes)
+- Celebraciones animadas con Chapi
+
+### Componentes Web
 - ✅ Navegación responsive con menú móvil
 - ✅ Footer completo con enlaces
-- ✅ Botones con estados de carga
-- ✅ Mensajes de éxito y error
+- ✅ Animación flotante de Chapi
+- ✅ Gradientes y efectos visuales modernos
+- ✅ Showcase de Chapi en diferentes contextos
 
 ### SEO y Accesibilidad
-- ✅ Meta tags optimizados por página
-- ✅ Estructura semántica HTML
+- ✅ Meta tags optimizados por página (title, description, keywords, OG tags)
+- ✅ Estructura semántica HTML5
 - ✅ Navegación accesible por teclado
 - ✅ Contraste de colores adecuado
+- ✅ Imágenes con alt text descriptivo
 
 ## 🔧 Personalización
 
@@ -140,7 +203,39 @@ El sitio está optimizado para:
 
 - **App Store**: Configurar enlace real en `pages/download.vue`
 - **Google Play**: Configurar enlace real en `pages/download.vue`
-- **API Endpoints**: Configurar en los formularios para funcionalidad real
+- **Email de Contacto**: coach-contacto@recomiendameapp.cl
+
+## 📧 Configuración del Formulario de Contacto
+
+El formulario de contacto está completamente funcional y envía emails a `coach-contacto@recomiendameapp.cl`.
+
+### Configuración del Backend
+
+Para que funcione correctamente, necesitas configurar el endpoint en tu backend:
+
+```bash
+# Ver documentación completa
+cat server/api/README.md
+```
+
+### Probar el Formulario
+
+```bash
+# Iniciar el servidor de desarrollo
+npm run dev
+
+# En otra terminal, probar el endpoint
+./test-contact.sh http://localhost:3000
+```
+
+### Sistema de Fallback
+
+El formulario tiene 3 niveles de respaldo:
+1. Intenta enviar al endpoint principal del backend
+2. Si falla, intenta con un endpoint alternativo
+3. Como último recurso, guarda el mensaje en los logs del servidor
+
+Esto garantiza que ningún mensaje se pierda.
 
 ## 📞 Soporte
 

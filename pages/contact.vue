@@ -1,18 +1,38 @@
 <template>
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="text-center mb-12">
-      <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-        Contáctanos
-      </h1>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-        ¿Tienes preguntas, sugerencias o necesitas ayuda? Estamos aquí para apoyarte en tu transformación nutricional.
-      </p>
-    </div>
+  <div>
+    <!-- Hero Section con Chapi -->
+    <section class="bg-gradient-to-br from-primary-500 via-primary-600 to-secondary-500 text-white py-16 relative overflow-hidden">
+      <div class="absolute inset-0 bg-black opacity-10"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="text-center lg:text-left">
+            <h1 class="text-4xl lg:text-6xl font-bold mb-6">
+              ¡Hablemos!
+            </h1>
+            <p class="text-xl lg:text-2xl text-primary-100">
+              ¿Tienes preguntas, sugerencias o necesitas ayuda? Chapi y nuestro equipo estamos aquí para apoyarte.
+            </p>
+          </div>
+          <div>
+            <img 
+              src="/assets/chapi-3d-promocionando.png" 
+              alt="Chapi listo para ayudarte"
+              class="w-full h-auto drop-shadow-2xl animate-float max-w-md mx-auto"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
       <!-- Contact Form -->
-      <div class="bg-white rounded-3xl shadow-soft p-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">Envíanos un mensaje</h2>
+      <div class="bg-white rounded-3xl shadow-medium p-8">
+        <div class="flex items-center mb-6">
+          <h2 class="text-2xl font-bold text-gray-900">Envíanos un mensaje</h2>
+          <span class="ml-3 text-3xl">💬</span>
+        </div>
         
         <form @submit.prevent="handleSubmit" class="space-y-6">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -107,20 +127,28 @@
         </form>
 
         <!-- Success Message -->
-        <div v-if="success" class="mt-6 p-4 bg-primary-50 border border-primary-200 rounded-xl">
-          <div class="flex items-center">
-            <span class="text-primary-500 mr-2">✅</span>
-            <p class="text-primary-700">
-              ¡Mensaje enviado exitosamente! Te responderemos pronto.
-            </p>
+        <div v-if="success" class="mt-6 p-6 bg-gradient-to-br from-primary-50 to-secondary-50 border-2 border-primary-300 rounded-2xl">
+          <div class="flex items-start">
+            <span class="text-4xl mr-3">🎉</span>
+            <div>
+              <p class="text-primary-700 font-semibold text-lg mb-1">
+                ¡Mensaje enviado exitosamente!
+              </p>
+              <p class="text-primary-600">
+                Chapi y nuestro equipo revisarán tu mensaje. Te responderemos a <strong>{{ form.email || 'tu correo' }}</strong> en las próximas 24-48 horas.
+              </p>
+            </div>
           </div>
         </div>
 
         <!-- Error Message -->
-        <div v-if="error" class="mt-6 p-4 bg-red-50 border border-red-200 rounded-xl">
-          <div class="flex items-center">
-            <span class="text-red-500 mr-2">❌</span>
-            <p class="text-red-700">{{ error }}</p>
+        <div v-if="error" class="mt-6 p-6 bg-red-50 border-2 border-red-200 rounded-2xl">
+          <div class="flex items-start">
+            <span class="text-3xl mr-3">😔</span>
+            <div>
+              <p class="text-red-700 font-semibold mb-1">Oops, algo salió mal</p>
+              <p class="text-red-600 text-sm">{{ error }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -128,7 +156,7 @@
       <!-- Contact Info -->
       <div class="space-y-8">
         <!-- Contact Methods -->
-        <div class="bg-white rounded-3xl shadow-soft p-8">
+        <div class="bg-white rounded-3xl shadow-medium p-8">
           <h3 class="text-xl font-bold text-gray-900 mb-6">Otras formas de contacto</h3>
           
           <div class="space-y-6">
@@ -137,8 +165,10 @@
                 <span class="text-primary-500 text-xl">📧</span>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900">Email</h4>
-                <p class="text-gray-600">hola@recomiendamecoach.com</p>
+                <h4 class="font-semibold text-forest">Email</h4>
+                <a href="mailto:coach-contacto@recomiendameapp.cl" class="text-primary-600 hover:text-primary-700">
+                  coach-contacto@recomiendameapp.cl
+                </a>
                 <p class="text-sm text-gray-500 mt-1">Respuesta en 24-48 horas</p>
               </div>
             </div>
@@ -168,7 +198,7 @@
         </div>
 
         <!-- FAQ Quick Links -->
-        <div class="bg-white rounded-3xl shadow-soft p-8">
+        <div class="bg-white rounded-3xl shadow-medium p-8">
           <h3 class="text-xl font-bold text-gray-900 mb-6">Preguntas Frecuentes</h3>
           
           <div class="space-y-4">
@@ -202,7 +232,7 @@
         </div>
 
         <!-- Business Hours -->
-        <div class="bg-white rounded-3xl shadow-soft p-8">
+        <div class="bg-white rounded-3xl shadow-medium p-8">
           <h3 class="text-xl font-bold text-gray-900 mb-6">Horarios de Atención</h3>
           
           <div class="space-y-3">
@@ -226,6 +256,19 @@
         </div>
       </div>
     </div>
+
+    <!-- Chapi motivando al final -->
+    <div class="text-center mt-16">
+      <img 
+        src="/assets/chapi-3d-ejercicio-2.png" 
+        alt="Chapi esperando tu mensaje"
+        class="w-48 h-auto mx-auto drop-shadow-2xl"
+      />
+      <p class="text-gray-600 mt-4 text-lg">
+        ¡Chapi está esperando tu mensaje! 💪
+      </p>
+    </div>
+  </div>
   </div>
 </template>
 
@@ -254,29 +297,59 @@ const handleSubmit = async () => {
   error.value = ''
   success.value = false
 
+  // Guardar el email antes de limpiar el formulario
+  const userEmail = form.value.email
+
   try {
-    // Simular envío
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    // Aquí iría la llamada real a tu API
-    // await $fetch('/api/contact', {
-    //   method: 'POST',
-    //   body: form.value
-    // })
+    // Enviar a la API local que redirige al backend
+    const response = await $fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: {
+        firstName: form.value.firstName,
+        lastName: form.value.lastName,
+        email: form.value.email,
+        subject: form.value.subject,
+        message: form.value.message
+      }
+    })
     
     success.value = true
     
-    // Limpiar formulario
+    // Limpiar formulario pero mantener el email para el mensaje de éxito
+    const savedEmail = form.value.email
     form.value = {
       firstName: '',
       lastName: '',
-      email: '',
+      email: savedEmail, // Mantener para mostrar en el mensaje
       subject: '',
       message: ''
     }
     
+    // Scroll al mensaje de éxito
+    setTimeout(() => {
+      const successElement = document.querySelector('.bg-gradient-to-br')
+      if (successElement) {
+        successElement.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }
+    }, 100)
+    
   } catch (err) {
-    error.value = 'Hubo un error al enviar el mensaje. Por favor intenta de nuevo.'
+    console.error('Error al enviar mensaje:', err)
+    
+    // Mostrar mensaje de error específico si está disponible
+    if (err && typeof err === 'object' && 'data' in err) {
+      const errorData = err.data
+      if (errorData && typeof errorData === 'object' && 'statusMessage' in errorData) {
+        error.value = String(errorData.statusMessage)
+      } else {
+        error.value = 'Hubo un error al enviar el mensaje. Por favor intenta de nuevo o escríbenos directamente a coach-contacto@recomiendameapp.cl'
+      }
+    } else {
+      error.value = 'Hubo un error al enviar el mensaje. Por favor intenta de nuevo o escríbenos directamente a coach-contacto@recomiendameapp.cl'
+    }
   } finally {
     loading.value = false
   }
