@@ -1,4 +1,4 @@
-# 1. Etapa de build
+# Etapa de build
 FROM node:20-alpine AS builder
 
 WORKDIR /app
@@ -19,19 +19,25 @@ RUN cp assets/screens/screen*.jpeg public/ || true
 # Construir la aplicación
 RUN npm run build
 
-# 2. Etapa de producción con Nginx
-FROM nginx:stable-alpine
+# Etapa de producción con Node.js
+FROM node:20-alpine
 
-# Borra el contenido por defecto
-RUN rm -rf /usr/share/nginx/html/*
+WORKDIR /app
 
-# Copia tu configuración de Nginx
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copiar solo lo necesario para producción
+COPY --from=builder /app/.output /app/.output
+COPY --from=builder /app/package.json /app/package.json
 
-# Copia el build estático (Nuxt build genera en .output/public)
-COPY --from=builder /app/.output/public /usr/share/nginx/html
+# Instalar solo dependencias de producción
+RUN npm ci --omit=dev
 
-# Exponemos el puerto 80
-EXPOSE 80
+# Exponer puerto 3000 (puerto por defecto de Nuxt)
+EXPOSE 3000
 
-CMD ["nginx", "-g", "daemon off;"]
+# Variables de entorno
+ENV NODE_ENV=production
+ENV NITRO_PORT=3000
+ENV NITRO_HOST=0.0.0.0
+
+# Comando para iniciar la aplicación
+CMD ["node", ".output/server/index.mjs"]

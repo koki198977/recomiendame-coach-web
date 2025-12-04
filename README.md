@@ -84,6 +84,23 @@ npm run build
 npm run preview
 ```
 
+## 🐳 Deployment con Docker
+
+```bash
+# Deployment automático (Recomendado)
+./deploy.sh
+
+# O manual
+docker-compose down
+docker-compose build --no-cache
+docker-compose up -d
+
+# Ver logs
+docker-compose logs -f
+```
+
+Ver `DEPLOYMENT.md` para guía completa de deployment.
+
 ## 📁 Estructura del Proyecto
 
 ```

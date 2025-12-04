@@ -5,7 +5,9 @@ services:
     build: .
     container_name: recomiendame-coach-web
     ports:
-      - '8081:80'
+      - '8081:3000'
     restart: unless-stopped
     environment:
       - NODE_ENV=production
+      - NITRO_PORT=3000
+      - NITRO_HOST=0.0.0.0
