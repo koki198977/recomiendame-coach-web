@@ -645,11 +645,7 @@ const handleLogout = () => {
   }
 }
 
-// Watch for modal opens to load data
-const originalShowFollowersModal = showFollowersModal
-const originalShowFollowingModal = showFollowingModal
-
-// Override the refs to trigger data loading
+// Initialize modal states
 showFollowersModal.value = false
 showFollowingModal.value = false
 
