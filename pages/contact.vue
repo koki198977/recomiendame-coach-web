@@ -261,10 +261,13 @@
 
     <!-- Chapi motivando al final -->
     <div class="text-center mt-16">
-      <img 
-        src="/assets/chapi-3d-ejercicio-2.png" 
-        alt="Chapi esperando tu mensaje"
-        class="w-48 h-auto mx-auto drop-shadow-2xl"
+      <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-4 inline-block">
+        <img 
+          src="/assets/chapi-3d-ejercicio-2.png" 
+          alt="Chapi esperando tu mensaje"
+          class="w-48 h-auto mx-auto drop-shadow-2xl rounded-2xl"
+        />
+      </div>
       />
       <p class="text-gray-600 mt-4 text-lg">
         ¡Chapi está esperando tu mensaje! 💪

@@ -447,10 +447,13 @@
         </div>
 
         <div class="mt-12 text-center">
-          <img 
-            src="/assets/chapi-3d-ejercicio-2.png" 
-            alt="Chapi celebrando"
-            class="w-64 h-auto mx-auto drop-shadow-2xl"
+          <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-4 inline-block">
+            <img 
+              src="/assets/chapi-3d-ejercicio-2.png" 
+              alt="Chapi celebrando"
+              class="w-64 h-auto mx-auto drop-shadow-2xl rounded-2xl"
+            />
+          </div>
           />
           <p class="text-gray-600 mt-6">
             Cada logro desbloqueado viene con una celebración animada de Chapi

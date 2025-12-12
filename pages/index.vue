@@ -351,11 +351,13 @@
 
         <!-- Chapi Image -->
         <div class="mt-16 text-center">
-          <img 
-            src="/assets/chapi-3d-ejercicio-2.png" 
-            alt="Chapi motivándote"
-            class="w-64 h-auto mx-auto drop-shadow-2xl"
-          />
+          <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-4 inline-block">
+            <img 
+              src="/assets/chapi-3d-ejercicio-2.png" 
+              alt="Chapi motivándote"
+              class="w-64 h-auto mx-auto drop-shadow-2xl rounded-2xl"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -380,7 +382,7 @@
               <img 
                 src="/assets/chapi-3d-compras.png" 
                 alt="Chapi ayudándote con las compras"
-                class="w-full h-64 object-contain group-hover:scale-110 transition-transform duration-300"
+                class="w-full h-64 object-contain group-hover:scale-110 transition-transform duration-300 rounded-2xl"
               />
             </div>
             <p class="text-center text-gray-900 font-semibold mt-4">Lista de Compras</p>
@@ -393,7 +395,7 @@
               <img 
                 src="/assets/chapi-3d-ejercicio-3.png" 
                 alt="Chapi motivándote a ejercitarte"
-                class="w-full h-64 object-contain group-hover:scale-110 transition-transform duration-300"
+                class="w-full h-64 object-contain group-hover:scale-110 transition-transform duration-300 rounded-2xl"
               />
             </div>
             <p class="text-center text-gray-900 font-semibold mt-4">Rutinas de Ejercicio</p>
@@ -406,7 +408,7 @@
               <img 
                 src="/assets/chapi-3d-foto-alimento.png" 
                 alt="Chapi escaneando alimentos"
-                class="w-full h-64 object-contain group-hover:scale-110 transition-transform duration-300"
+                class="w-full h-64 object-contain group-hover:scale-110 transition-transform duration-300 rounded-2xl"
               />
             </div>
             <p class="text-center text-gray-900 font-semibold mt-4">Escaneo de Alimentos</p>
@@ -419,7 +421,7 @@
               <img 
                 src="/assets/chapi-3d-post.png" 
                 alt="Chapi en la red social"
-                class="w-full h-64 object-contain group-hover:scale-110 transition-transform duration-300"
+                class="w-full h-64 object-contain group-hover:scale-110 transition-transform duration-300 rounded-2xl"
               />
             </div>
             <p class="text-center text-gray-900 font-semibold mt-4">Red Social</p>
@@ -435,72 +437,128 @@
         <div class="text-center mb-16">
           <span class="text-primary-500 font-semibold text-sm uppercase tracking-wide">Interfaz</span>
           <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6 mt-2">
-            Descubre la App
+            Descubre la App Completa
           </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Una interfaz intuitiva diseñada para hacer tu experiencia simple y efectiva
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+            Una experiencia completa diseñada para transformar tu relación con la comida y el ejercicio. Desde el primer login hasta tu comunidad de apoyo.
           </p>
+          
+          <!-- Categorías -->
+          <div class="flex flex-wrap justify-center gap-4 text-sm">
+            <span class="bg-primary-100 text-primary-700 px-4 py-2 rounded-full font-medium">🏠 Inicio & Login</span>
+            <span class="bg-secondary-100 text-secondary-700 px-4 py-2 rounded-full font-medium">🎯 Configuración</span>
+            <span class="bg-primary-100 text-primary-700 px-4 py-2 rounded-full font-medium">🥗 Nutrición</span>
+            <span class="bg-secondary-100 text-secondary-700 px-4 py-2 rounded-full font-medium">💪 Ejercicios</span>
+            <span class="bg-primary-100 text-primary-700 px-4 py-2 rounded-full font-medium">👥 Comunidad</span>
+          </div>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          <!-- Screenshot 1 -->
-          <div class="group">
-            <div class="bg-white rounded-2xl p-3 shadow-medium hover:shadow-strong transition-shadow duration-300">
-              <img 
-                src="/screen1.jpeg" 
-                alt="Pantalla de inicio"
-                class="w-full h-80 object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
-              />
+        <!-- Phone Mockup Carousel -->
+        <div class="relative max-w-6xl mx-auto">
+          <!-- Main Phone Display -->
+          <div class="flex justify-center mb-12">
+            <div class="relative">
+              <!-- Phone Frame -->
+              <div class="relative w-80 h-[640px] bg-gradient-to-b from-gray-800 to-gray-900 rounded-[3rem] shadow-2xl p-2">
+                <!-- Screen -->
+                <div class="w-full h-full bg-white rounded-[2.5rem] overflow-hidden relative">
+                  <!-- Screenshot Container -->
+                  <img 
+                    id="current-screenshot" 
+                    src="/home.jpg" 
+                    alt="App Screenshot"
+                    class="w-full h-full object-cover transition-all duration-500 ease-in-out"
+                  />
+                  
+                  <!-- Screen Overlay Sutil -->
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent pointer-events-none"></div>
+                  
+                  <!-- Dynamic Island -->
+                  <div class="absolute top-4 left-1/2 transform -translate-x-1/2 w-28 h-5 bg-black rounded-full z-20 shadow-lg"></div>
+                </div>
+                
+                <!-- Phone Buttons -->
+                <div class="absolute -right-0.5 top-32 w-0.5 h-12 bg-gray-600 rounded-l"></div>
+                <div class="absolute -right-0.5 top-48 w-0.5 h-16 bg-gray-600 rounded-l"></div>
+                <div class="absolute -right-0.5 top-68 w-0.5 h-16 bg-gray-600 rounded-l"></div>
+              </div>
+              
+              <!-- Floating Elements -->
+              <div class="absolute -top-4 -left-4 w-8 h-8 bg-primary-400 rounded-full animate-pulse opacity-60"></div>
+              <div class="absolute -bottom-4 -right-4 w-6 h-6 bg-secondary-400 rounded-full animate-pulse opacity-60 animation-delay-1000"></div>
+              <div class="absolute top-1/2 -left-8 w-4 h-4 bg-primary-300 rounded-full animate-bounce opacity-40"></div>
             </div>
-            <p class="text-center text-gray-600 mt-3 font-medium text-sm">Home</p>
           </div>
 
-          <!-- Screenshot 2 -->
-          <div class="group">
-            <div class="bg-white rounded-2xl p-3 shadow-medium hover:shadow-strong transition-shadow duration-300">
-              <img 
-                src="/screen2.jpeg" 
-                alt="Plan nutricional"
-                class="w-full h-80 object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <p class="text-center text-gray-600 mt-3 font-medium text-sm">Mi Programa</p>
+          <!-- Screenshot Navigation -->
+          <div class="flex flex-wrap justify-center gap-4 mb-8">
+            <button 
+              onclick="changeScreenshot('/home.jpg', 'Login', this)" 
+              class="screenshot-btn active flex flex-col items-center p-4 bg-white rounded-2xl shadow-medium hover:shadow-strong transition-all duration-300 border-2 border-transparent hover:border-primary-200 group"
+            >
+              <div class="w-16 h-16 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                <span class="text-2xl">🏠</span>
+              </div>
+              <span class="text-sm font-medium text-gray-700">Login</span>
+            </button>
+            
+            <button 
+              onclick="changeScreenshot('/inicio.jpg', 'Inicio', this)" 
+              class="screenshot-btn flex flex-col items-center p-4 bg-white rounded-2xl shadow-medium hover:shadow-strong transition-all duration-300 border-2 border-transparent hover:border-primary-200 group"
+            >
+              <div class="w-16 h-16 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-xl flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                <span class="text-2xl">🎯</span>
+              </div>
+              <span class="text-sm font-medium text-gray-700">Inicio</span>
+            </button>
+            
+            <button 
+              onclick="changeScreenshot('/onboardign1.jpg', 'Configuración', this)" 
+              class="screenshot-btn flex flex-col items-center p-4 bg-white rounded-2xl shadow-medium hover:shadow-strong transition-all duration-300 border-2 border-transparent hover:border-primary-200 group"
+            >
+              <div class="w-16 h-16 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                <span class="text-2xl">⚙️</span>
+              </div>
+              <span class="text-sm font-medium text-gray-700">Setup</span>
+            </button>
+            
+            <button 
+              onclick="changeScreenshot('/nutricion1.jpg', 'Nutrición', this)" 
+              class="screenshot-btn flex flex-col items-center p-4 bg-white rounded-2xl shadow-medium hover:shadow-strong transition-all duration-300 border-2 border-transparent hover:border-primary-200 group"
+            >
+              <div class="w-16 h-16 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-xl flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                <span class="text-2xl">🥗</span>
+              </div>
+              <span class="text-sm font-medium text-gray-700">Nutrición</span>
+            </button>
+            
+            <button 
+              onclick="changeScreenshot('/rutinas1.jpg', 'Ejercicios', this)" 
+              class="screenshot-btn flex flex-col items-center p-4 bg-white rounded-2xl shadow-medium hover:shadow-strong transition-all duration-300 border-2 border-transparent hover:border-primary-200 group"
+            >
+              <div class="w-16 h-16 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                <span class="text-2xl">💪</span>
+              </div>
+              <span class="text-sm font-medium text-gray-700">Ejercicios</span>
+            </button>
+            
+            <button 
+              onclick="changeScreenshot('/social.jpg', 'Comunidad', this)" 
+              class="screenshot-btn flex flex-col items-center p-4 bg-white rounded-2xl shadow-medium hover:shadow-strong transition-all duration-300 border-2 border-transparent hover:border-primary-200 group"
+            >
+              <div class="w-16 h-16 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-xl flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                <span class="text-2xl">👥</span>
+              </div>
+              <span class="text-sm font-medium text-gray-700">Social</span>
+            </button>
           </div>
 
-          <!-- Screenshot 3 -->
-          <div class="group">
-            <div class="bg-white rounded-2xl p-3 shadow-medium hover:shadow-strong transition-shadow duration-300">
-              <img 
-                src="/screen3.jpeg" 
-                alt="Ejercicios"
-                class="w-full h-80 object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
-              />
+          <!-- Feature Description -->
+          <div class="text-center">
+            <div id="feature-description" class="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-6 max-w-2xl mx-auto">
+              <h3 id="feature-title" class="text-2xl font-bold text-gray-900 mb-3">Acceso Seguro</h3>
+              <p id="feature-text" class="text-gray-600">Inicia sesión de forma segura y accede a tu coach personal. Tu salud, nuestra prioridad.</p>
             </div>
-            <p class="text-center text-gray-600 mt-3 font-medium text-sm">Ejercicios</p>
-          </div>
-
-          <!-- Screenshot 4 -->
-          <div class="group">
-            <div class="bg-white rounded-2xl p-3 shadow-medium hover:shadow-strong transition-shadow duration-300">
-              <img 
-                src="/screen4.jpeg" 
-                alt="Red social"
-                class="w-full h-80 object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <p class="text-center text-gray-600 mt-3 font-medium text-sm">Social</p>
-          </div>
-
-          <!-- Screenshot 5 -->
-          <div class="group">
-            <div class="bg-white rounded-2xl p-3 shadow-medium hover:shadow-strong transition-shadow duration-300">
-              <img 
-                src="/screen5.jpeg" 
-                alt="Perfil de usuario"
-                class="w-full h-80 object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <p class="text-center text-gray-600 mt-3 font-medium text-sm">Perfil</p>
           </div>
         </div>
 
@@ -522,11 +580,13 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Image -->
           <div class="order-2 lg:order-1">
-            <img 
-              src="/assets/chapi-3d-ejercicio-2.png" 
-              alt="Chapi celebrando tus logros"
-              class="w-full h-auto drop-shadow-2xl"
-            />
+            <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-6 inline-block">
+              <img 
+                src="/assets/chapi-3d-ejercicio-2.png" 
+                alt="Chapi celebrando tus logros"
+                class="w-full h-auto drop-shadow-2xl rounded-2xl"
+              />
+            </div>
           </div>
 
           <!-- Content -->
@@ -686,5 +746,114 @@ useHead({
       content: "website",
     },
   ],
+});
+
+// JavaScript para el carrusel de screenshots
+// Estilos CSS personalizados
+const customStyles = `
+  .screenshot-btn.active {
+    border-color: #74B796 !important;
+    background-color: #f0f9f4 !important;
+  }
+  
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+`;
+
+// Agregar estilos al head
+if (process.client) {
+  const styleSheet = document.createElement('style');
+  styleSheet.textContent = customStyles;
+  document.head.appendChild(styleSheet);
+}
+
+onMounted(() => {
+  // Función para cambiar screenshot
+  window.changeScreenshot = function(imageSrc, title, button) {
+    // Update screenshot
+    const img = document.getElementById('current-screenshot');
+    if (img) {
+      img.style.opacity = '0';
+      
+      setTimeout(() => {
+        img.src = imageSrc;
+        img.style.opacity = '1';
+      }, 250);
+    }
+    
+    // Update active button
+    document.querySelectorAll('.screenshot-btn').forEach(btn => {
+      btn.classList.remove('active', 'border-primary-400', 'bg-primary-50');
+    });
+    if (button) {
+      button.classList.add('active', 'border-primary-400', 'bg-primary-50');
+    }
+    
+    // Update description
+    const descriptions = {
+      'Login': {
+        title: 'Acceso Seguro',
+        text: 'Inicia sesión de forma segura y accede a tu coach personal. Tu salud, nuestra prioridad.'
+      },
+      'Inicio': {
+        title: 'Dashboard Inteligente',
+        text: 'Visualiza tu progreso, planes del día y recomendaciones personalizadas en un solo lugar.'
+      },
+      'Configuración': {
+        title: 'Personalización Total',
+        text: 'Configura tus objetivos, preferencias y restricciones para planes 100% personalizados.'
+      },
+      'Nutrición': {
+        title: 'Planes Nutricionales IA',
+        text: 'Genera planes semanales completos con recetas, macros y lista de compras automática.'
+      },
+      'Ejercicios': {
+        title: 'Rutinas Adaptadas',
+        text: 'Entrenamientos personalizados según tu equipamiento, nivel y objetivos específicos.'
+      },
+      'Comunidad': {
+        title: 'Red Social Motivadora',
+        text: 'Comparte tu progreso, inspírate con otros y construye una comunidad de apoyo.'
+      }
+    };
+    
+    const desc = descriptions[title];
+    if (desc) {
+      const titleEl = document.getElementById('feature-title');
+      const textEl = document.getElementById('feature-text');
+      if (titleEl) titleEl.textContent = desc.title;
+      if (textEl) textEl.textContent = desc.text;
+    }
+  };
+  
+  // Auto-rotate screenshots
+  let currentIndex = 0;
+  const screenshots = [
+    { src: '/home.jpg', title: 'Login' },
+    { src: '/inicio.jpg', title: 'Inicio' },
+    { src: '/onboardign1.jpg', title: 'Configuración' },
+    { src: '/nutricion1.jpg', title: 'Nutrición' },
+    { src: '/rutinas1.jpg', title: 'Ejercicios' },
+    { src: '/social.jpg', title: 'Comunidad' }
+  ];
+  
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % screenshots.length;
+    const screenshot = screenshots[currentIndex];
+    const button = document.querySelectorAll('.screenshot-btn')[currentIndex];
+    if (window.changeScreenshot) {
+      window.changeScreenshot(screenshot.src, screenshot.title, button);
+    }
+  }, 4000);
 });
 </script>
